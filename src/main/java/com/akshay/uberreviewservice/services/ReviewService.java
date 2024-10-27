@@ -18,12 +18,10 @@ public class ReviewService implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("Hello World");
         Review review =  Review
                           .builder()
                           .content("Amazing Ride")
                           .rating(4.5).build();
-        System.out.println(review);
         reviewRepository.save(review);  // this code executes sql query
 
         List<Review> reviewList = reviewRepository.findAll();
